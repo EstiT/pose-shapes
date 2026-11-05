@@ -54,3 +54,15 @@ The top-right of the page shows the number of tracked hands and live values for 
 - Gesture thresholds are hand-tuned guesses; lighting and camera angle matter.
 - `vendor/` (~24 MB: MediaPipe, models, Matter.js) is committed so the app works on GitHub Pages with no build step. `fetch-assets.sh` re-downloads it.
 - Hosted on GitHub Pages from the `main` branch root.
+
+
+## Demo 
+
+
+https://github.com/user-attachments/assets/b63c152a-2f46-4abd-9996-b80007bf2834
+
+
+
+
+
+

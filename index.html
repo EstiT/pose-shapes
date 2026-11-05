@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pose Shapes</title>
+  <style>
+    html, body { margin: 0; height: 100%; background: #111; color: #fff; font-family: system-ui, sans-serif; overflow: hidden; }
+    #stage { position: relative; width: min(100vw, calc(100vh * 16 / 9)); aspect-ratio: 16 / 9; margin: 0 auto; top: 50%; transform: translateY(-50%); }
+    video, canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+    video { transform: scaleX(-1); object-fit: fill; }
+    #hud { position: absolute; left: 12px; top: 12px; right: 12px; display: flex; justify-content: space-between; pointer-events: none; font-size: 14px; text-shadow: 0 1px 3px #000; }
+    #legend { line-height: 1.6; }
+    #status { opacity: .8; }
+    #start { position: absolute; inset: 0; display: grid; place-items: center; background: #111c; z-index: 2; }
+    #start button { font-size: 20px; padding: 14px 28px; border-radius: 999px; border: 0; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <div id="stage">
+    <video id="video" playsinline muted></video>
+    <canvas id="fx" width="1280" height="720"></canvas>
+    <div id="hud">
+      <div id="legend">
+        🫶 heart hands → ❤️<br>
+        ✌️ peace sign → ☮️<br>
+        👍 thumbs up → ⭐<br>
+        🙌 arms up → 🎉<br>
+        🙏 hands overhead → ☀️<br>
+        👌 OK sign → 🍩 &nbsp; 🤘 rock on → 🎸<br>
+        ☝️ point up → 💡 &nbsp; 🤙 shaka → 🏄<br>
+        🤟 love-you → 🌈 &nbsp; 🧍 T-pose → 🦅<br>
+        🙆 hands on head → 👑 &nbsp; 🙅 arms crossed → 🛡️<br>
+        <small>keys 1–9, 0, Q, W, E spawn without a camera · C clears</small>
+      </div>
+      <div id="status">loading…</div>
+    </div>
+    <div id="start"><button id="startBtn">Start camera</button></div>
+  </div>
+  <script src="vendor/matter.min.js" onerror="document.getElementById('status').textContent='vendor/matter.min.js missing - run ./fetch-assets.sh'"></script>
+  <script type="module" src="main.js"></script>
+</body>
+</html>
